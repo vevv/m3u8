@@ -692,3 +692,7 @@ def test_iframe_with_stable_variant_id():
 def test_media_with_stable_rendition_id():
     data = m3u8.parse(playlists.VARIANT_PLAYLIST_WITH_STABLE_RENDITION_ID)
     assert data['media'][0]['stable_rendition_id'] == 'a8213e27c12a158ea8660e0fe8bdcac6072ca26d984e7e8603652bc61fdceffa'
+
+def test_media_with_supplemental_codecs():
+    data = m3u8.parse(playlists.VARIANT_PLAYLIST_WITH_SUPPLEMENTAL_CODECS)
+    assert data['playlists'][0]['stream_info']['supplemental_codecs'] == 'dvh1.08.03/dv1p,hvc1.2.4.H120.90/cdm4'
